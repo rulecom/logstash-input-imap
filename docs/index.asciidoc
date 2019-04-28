@@ -46,6 +46,7 @@ This plugin supports the following configuration options plus the <<plugins-{typ
 | <<plugins-{type}s-{plugin}-port>> |<<number,number>>|No
 | <<plugins-{type}s-{plugin}-secure>> |<<boolean,boolean>>|No
 | <<plugins-{type}s-{plugin}-sincedb_path>> |<<string,string>>|No
+| <<plugins-{type}s-{plugin}-mail_in_attachment>> |<<boolean,boolean>>|No
 | <<plugins-{type}s-{plugin}-strip_attachments>> |<<boolean,boolean>>|No
 | <<plugins-{type}s-{plugin}-uid_tracking>> |<<boolean,boolean>>|No
 | <<plugins-{type}s-{plugin}-user>> |<<string,string>>|Yes
@@ -159,6 +160,18 @@ mail) that will be written to disk. The default will write sincedb file to
 `<path.data>/plugins/inputs/imap` directory.
 NOTE: it must be a file path and not a directory path.
 
+
+
+[id="plugins-{type}s-{plugin}-mail_in_attachment"]
+===== `mail_in_attachment`
+
+  * Value type is <<boolean,boolean>>
+  * Default value is `false`
+
+Used when the relevant message is delivered as an attachment in an encapsulating email
+
+
+
 [id="plugins-{type}s-{plugin}-strip_attachments"]
 ===== `strip_attachments`
 
@@ -184,6 +197,8 @@ of the `uid_tracking` value, so you can switch its value as needed. In
 transition from the previous IMAP input plugin version, first process at least
 one mail with `uid_tracking` set to `false` to save the UID of the last
 processed mail and then switch `uid_tracking` to `true`.
+
+
 
 [id="plugins-{type}s-{plugin}-user"]
 ===== `user`
